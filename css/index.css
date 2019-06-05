@@ -1,0 +1,414 @@
+body {
+  transition-duration: 2s;
+  background-color: rgb(57, 60, 65);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+:link {
+  color: #66ff66;
+}
+
+:visited {
+  color: #ffff99;
+}
+
+.BG img#MAIN_BG {
+  position: absolute;
+  height: 250px;
+  left: 30%;
+  top: 62%;
+  z-index: -1;
+  animation-name: Bottom_BG_swipe;
+  animation: Bottom_BG_swipe 15s infinite;
+}
+
+@keyframes Bottom_BG_swipe {
+
+  0%,
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+  }
+
+  10%,
+  90% {
+    opacity: 0.3;
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+
+.BG img#TOP_BG {
+  position: absolute;
+  height: 100px;
+  z-index: -1;
+  bottom: auto;
+  opacity: 0.5;
+}
+
+#loading_text {
+  display: inherit;
+  color: rgb(233, 233, 233);
+  text-align: center;
+  position: relative;
+  margin-top: 75%;
+  left: 1%;
+  z-index: 2;
+  animation-name: loadingtext;
+  animation-duration: 1s;
+}
+
+@keyframes loadingtext {
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.Starting_Scene {
+  position: relative;
+  margin-top: 2%;
+  left: 42%;
+  z-index: 2;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 5px solid #fed;
+  border-color: #ff6666 transparent #6666ff transparent;
+  animation: Starting_Scene 2s linear infinite;
+}
+
+@keyframes Starting_Scene {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  opacity: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.Main_Body {
+  z-index: 1;
+  display: none;
+  flex-flow: column wrap;
+  /*Animation*/
+  position: relative;
+  animation-name: after_loading;
+  animation-duration: 1s;
+}
+
+@keyframes after_loading {
+  from {
+    top: -100px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+.NavBar {
+  order: 1;
+  background-color: rgba(36, 36, 36, 0.2);
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: Arial;
+  justify-content: space-between;
+}
+
+.NavBar a {
+  display: none;
+}
+
+.Home {
+  display: block;
+  text-align: center;
+  margin-left: 5px;
+  position: relative;
+  opacity: 1;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.Home #home_icon {
+  height: 40px;
+}
+
+.Stats_Indicator {
+  display: block;
+  text-align: center;
+  margin-left: 5px;
+  position: relative;
+  opacity: 1;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.Stats_Indicator img#desktop {
+  display: none;
+}
+
+.Stats_Indicator #mobile {
+  display: block;
+  height: 40px;
+}
+
+.Login {
+  display: block;
+  text-align: center;
+  margin-right: 5px;
+  position: relative;
+  opacity: 1;
+  font-size: 15px;
+  padding: 3px;
+}
+
+.Login #login_icon {
+  height: 40px;
+}
+
+.Login:hover #Login_Form {
+  display: block;
+}
+
+.Login #Login_Form {
+  display: none;
+  margin-right: 50px;
+  position: absolute;
+  margin-top: 3px;
+  margin-right: -5px;
+  background-color: rgba(36, 36, 36, 0.8);
+  min-width: 160px;
+  z-index: 2;
+  right: 0;
+}
+
+#Login_Form #inputs,
+#actions {
+  border: 0px;
+}
+
+.News {
+  order: 2;
+  height: 766px;
+  display: flex;
+  flex-direction: column;
+}
+
+.News .Info_Bar {
+  display: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(233, 233, 233, 0.1);
+}
+
+.News .Info_Bar a {
+  white-space: pre;
+  color: rgb(233, 233, 233);
+  font-size: 15px;
+  text-align: center;
+}
+
+.News .Info_Bar .Title a {
+  flex-grow: 1;
+  white-space: pre;
+  font-size: 25px;
+  text-align: center;
+}
+
+.News .Content_Panel {
+  display: inherit;
+  position: relative;
+  /*16:9 56.25% */
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.News .Content_Panel iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.News .Content_Text {
+  display: inline;
+}
+
+.News .Content_Text p {
+  color: rgb(233, 233, 233);
+}
+
+iframe#profile_frame {
+  display: none;
+  height: 100%;
+}
+
+.Change_Profile_Icon {
+  order: 3;
+  display: flex;
+  position: static;
+  background-color: rgba(233, 233, 233, 0.1);
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.Change_Profile_Icon img {
+  position: relative;
+  height: 90px;
+}
+
+.Change_Profile_Icon img:hover {
+  animation: hovering 0.5s;
+}
+
+@keyframes hovering {
+
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+}
+
+@media screen and (min-width: 720px) {
+
+  .Starting_Scene {
+    left: 47%;
+  }
+
+  #loading_text {
+    margin-top: 30%;
+  }
+
+  .News .Content_Panel {
+    position: relative;
+    /*16:9 56.25% */
+    padding-bottom: 40%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .News .Content_Panel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* For Desktop User */
+@media screen and (min-width: 1270px) {
+
+  .Starting_Scene {
+    left: 48%;
+  }
+
+  #loading_text {
+    margin-top: 25%;
+  }
+
+  .BG img#MAIN_BG {
+    height: 350px;
+    top: 59%;
+    left: 79.6%;
+  }
+
+  .BG img#TOP_BG {
+    height: 200px;
+  }
+
+
+  .NavBar a {
+    display: block;
+  }
+
+  .NavBar {
+    justify-content: space-between;
+  }
+
+  .Home #home_icon {
+    height: 55px;
+  }
+
+  .Login #login_icon {
+    height: 55px;
+  }
+
+  .Stats_Indicator img#desktop {
+    display: block;
+    height: 75px;
+  }
+
+  .Stats_Indicator #mobile {
+    display: none;
+  }
+
+  .News {
+    height: 760px;
+  }
+
+  .News .Info_Bar a {
+    font-size: 25px;
+  }
+
+  .News .Info_Bar .Title a {
+    font-size: 35px;
+  }
+
+  .News .Content_Panel {
+    top: 10px;
+    padding-bottom: 25%;
+  }
+
+  .News .Content_Panel iframe {
+    left: 12.5%;
+    width: 75%;
+  }
+
+  iframe#profile_frame {
+    display: none;
+    height: 100%;
+  }
+
+  .Change_Profile_Icon {
+    height: 100px;
+  }
+
+  .Change_Profile_Icon img {
+    height: 95px;
+  }
+
+}

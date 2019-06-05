@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/index.css">
+    <script src="./js/index.js"></script>
+</head>
+
+<body onload="loading()">
+
+    <a id="loading_text" style="display:inherit;">Loading Virtual Data
+        <div class="Starting_Scene" style="display:block;" id="StrScn"></div> <!-- Loading Scene -->
+    </a> <!-- Loading Text -->
+
+    <div class="Main_Body" style="display:none;" id="MAINBdy">
+        <!-- Main Body -->
+        <div class="BG">
+            <img src="./img/Luna_BG1.png" alt="" id="MAIN_BG">
+            <img src="./img/Top_BG.png" alt="" id="TOP_BG">
+            <div class="NavBar">
+                <!-- Navigation Bar -->
+
+                <div class="Home">
+                    <!-- Home NAV Item -->
+                    <img src="./img/home_icon.png" id="home_icon" alt="Home" onclick="back_to_home();">
+                    <br>
+                    <a>Home</a>
+                </div>
+
+                <div class="Stats_Indicator">
+                    <!-- Status Indicator -->
+                    <img src="./img/desktop_screen_icon.png" id="desktop" alt="You are in desktop mode"
+                        title="You are in desktop mode">
+                    <img src="./img/mobile_screen_icon.png" id="mobile" height="75px" alt="You are in mobile mode"
+                        title="You are in mobile mode">
+                </div>
+
+                <div class="Login" href="#">
+                    <!-- Login NAV Item -->
+                    <img src="./img/login_icon.png" id="login_icon" alt="Login">
+                    <br>
+                    <a>Login</a>
+
+                    <div id="Login_Form">
+                        <!-- Login Form Sub-Item -->
+                        <form name="login_form" onsubmit="return login()" method="POST">
+                            <fieldset id="inputs">
+                                <input type="text" name="User_ID" id="UID" placeholder="UID" required
+                                    pattern="^[a-zA-z0-9]{*}$">
+                                <br>
+                                <input type="password" name="User_PW" id="PW" placeholder="Password" required
+                                    pattern="^[a-zA-Z0-9!@#$%^&*_+-=]{4,12}">
+                            </fieldset>
+                            <fieldset id="actions">
+                                <input type="submit" value="submit">
+                            </fieldset>
+                        </form>
+                    </div> <!-- End Of Login Form -->
+
+                </div> <!-- End Of Login -->
+
+            </div> <!-- End Of NavBar -->
+
+            <div class="News">
+                <!-- News Info -->
+                <iframe src="" frameborder="0" id="profile_frame"></iframe>
+                <div class="Info_Bar" id="bar">
+                    <!-- Top Information Bar -->
+                    <div class="Date"> <a id="Info_date"></a> </div> <!-- date info -->
+                    <div class="Title"> <a>Virtual YouTuber</a> </div> <!-- Just a Title -->
+                    <div class="Time"> <a id="Info_time"></a> </div> <!-- time info -->
+                </div>
+
+                <div class="Content_Panel" id="panel">
+                    <!-- content -->
+                    <iframe src="https://www.youtube.com/embed/lkElSoN9RLQ" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="Content_Text" id="panel_text">
+                    <br>
+                    <h2 style="color:rgb(233, 233, 233);">簡介</h2>
+                    <p>
+                        Vtuber的概念是由Kizuna AI在2016年11月以虛擬YouTuber的形式開創的，Kizuna
+                        AI也是公認的第一個虛擬YouTuber。自她大熱以後，2017年出現了大量的虛擬YouTuber。需要注意的是，由於Kizuna
+                        AI的設定為AI，導致一部分人將其他Vtuber的設定一併誤認為AI。而實際上，並非所有Vtuber的設定均為AI，其他的Vtuber各有各自的設定。
+                    </p>
+                    <p>
+                        公認的虛擬YouTuber四天王是對YouTube頻道訂閱數最早突破10萬人的五人:絆愛(Kizuna AI)、Mirai Akari、輝夜月(Kaguya
+                        Luna)、電腦少女Siro、Nekomasu的統稱。其中Kizuna AI由於頻道訂閱數最早突破100萬而視作高於其他四人的存在。
+                    </p>
+                    <p>
+                        本文引自<a href="https://zh.moegirl.org">萌娘百科</a>，文字内容遵守【知识共享 署名-非商业性使用-相同方式共享 3.0】協議。
+                    </p>
+                </div>
+            </div>
+            <div class="Change_Profile_Icon">
+                <!-- Bottom Change Page Icon -->
+                <a href="#profile_frame">
+                    <img src="./img/change_background_img/kizuna.png" alt="Kizuna AI profile" title="Kizuna AI profile"
+                    onclick="change_profile('AI.html');">
+                </a>
+                <a href="#profile_frame">
+                    <img src="./img/change_background_img/kaguya.png" alt="Kaguya Luna profile" title="Kaguya Luna profile"
+                    onclick="change_profile('Luna.html');">
+                </a>
+                <a href="#profile_frame">
+                    <img src="./img/change_background_img/akari.png" alt="Mirai Akari profile" title="Mirai Akari profile"
+                    onclick="change_profile('Akari.html');">
+                </a>
+                <a href="#profile_frame">
+                    <img src="./img/change_background_img/Mikoko.png" alt="Nekomasu profile" title="Nekomasu profile"
+                    onclick="change_profile('Nekomasu.html');">
+                </a>
+            </div>
+        </div>
+    </div> <!-- End Of Main Body -->
+
+
+</body>
+
+</html>
